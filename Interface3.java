@@ -66,8 +66,7 @@ class DynamicStack implements StackOperations
         {
             System.out.println("Stack underflow...");
         }
-        int data = this.stack[top--];
-        return data;
+        return this.stack[top--];
     }
     void increaseSize()
     {	         
