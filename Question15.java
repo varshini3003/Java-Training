@@ -1,5 +1,4 @@
 import java.util.*;
-import java.lang.*;
 public class Question15 {
     public static void printprime()
     {
