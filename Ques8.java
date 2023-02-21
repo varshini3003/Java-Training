@@ -3,7 +3,7 @@
  */
 class Single 
 {   
-    static Single s = new Single();     
+    private static Single s;     
     public char ch = 'a'; 
     private Single()   
     {   
@@ -12,6 +12,10 @@ class Single
     //Global access to get the object of Singleton class
     public static Single getObject()   
     {   
+        if(s==null)
+        {
+            s=new Single();
+        }
         return s;   
     }   
 }  
