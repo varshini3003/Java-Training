@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 /*
- * Try the following and observe the result - Output is "caller"
+ * Try the following and observe the result - Output is "finally-method2 caller"
  * Also try it with a statement throwing some exception in line 1 
  */
 class Sample
@@ -21,6 +21,10 @@ class Sample
         catch(Exception e)
         {
             System.out.println("catch-method2");   //Exception caught 
+        }
+        finally
+        {
+            System.out.println("finally-method2");
         }
     }
 }
