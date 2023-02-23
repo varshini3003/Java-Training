@@ -2,7 +2,7 @@ package Question3;
 
 /*
  * Try the code by replacing the return statement in the try block with System.exit(0)
- * Output is - "catch-method2 finally-method2 caller"
+ * Output - Program exits without printing anything
  */
 class Sample
 {
