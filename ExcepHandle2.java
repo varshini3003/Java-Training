@@ -30,8 +30,8 @@ class Sample
 }
 public class ExcepHandle2 {
     public static void main(String[] args) {
-    Sample s = new Sample();
-    s.method1();
-}
+        Sample sample = new Sample();
+        sample.method1();
+    }
 }
 
