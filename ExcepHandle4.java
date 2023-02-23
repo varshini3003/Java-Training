@@ -34,9 +34,9 @@ class MyException
 }
 public class ExcepHandle4 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a phone number");
-        String phno = sc.nextLine();
+        String phno = scanner.nextLine();
         MyException me = new MyException();
         try
         {
