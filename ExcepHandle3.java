@@ -1,4 +1,3 @@
-import java.io.IOException;
 /*
  * Try the code by replacing the return statement in the try block with System.exit(0)
  * Output is - "catch-method2 finally-method2 caller"
@@ -29,8 +28,8 @@ class Sample
 }
 public class ExcepHandle3 {
     public static void main(String[] args) {
-    Sample s = new Sample();
-    s.method1();
+    Sample sample = new Sample();
+    sample.method1();
 }
 }
 
