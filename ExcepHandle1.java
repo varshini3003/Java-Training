@@ -25,14 +25,14 @@ class Exception1
 }
 public class ExcepHandle1 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a single digit ");
-        int num = sc.nextInt();
-        Exception1 e = new Exception1();
+        int num = scanner.nextInt();
+        Exception1 exp = new Exception1();
         /*
         try
         {*/
-            e.singleDigitCheck(num);
+            exp.singleDigitCheck(num);
         /* }
         catch(Exception ex)
         {
