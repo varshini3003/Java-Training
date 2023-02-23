@@ -7,20 +7,21 @@
 import java.util.*;
 public class ExcepHandle7 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         while(true)
         {
             System.out.println("Enter numerator");
-            String numer = sc.next();
+            String numer = scanner.next();
             if(numer.equals("q") || numer.equals("Q"))
             {
                 break;
             }
-            int num = Integer.parseInt(numer);
+            int numerator = Integer.parseInt(numer);
             System.out.println("Enter denominator");
-            int den = sc.nextInt();
-            try{
-                int frac = num/den;
+            int denominator = scanner.nextInt();
+            try
+            {
+                int fraction = numerator/denominator;
             }
             catch(Exception e)
             {
