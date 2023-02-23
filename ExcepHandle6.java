@@ -16,18 +16,18 @@ class DerivedClass extends BaseClass
     {
         try
         {
-            //BaseClass b = new BaseClass();
+            //BaseClass base = new BaseClass();
         }
-        catch(RuntimeException ie)
+        catch(RuntimeException rte)
         {
             System.out.println("In catch block...");
-            System.out.println(ie);
+            System.out.println(rte);
             //Not able to catch exception thrown by base class constructor
         }
     }
 }
 public class ExcepHandle6 {
     public static void main(String[] args) {
-        DerivedClass dc = new DerivedClass();
+        DerivedClass derived = new DerivedClass();
     }
 }
