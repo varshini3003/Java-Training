@@ -8,9 +8,9 @@ public class Ques1 {
     {
         x=10;
     }
-    public static void update(Proof p)
+    public static void update(Proof proof)
     {      
-        p.num--;  
+        proof.num--;  
     }
     public static void updateArr(int arr[])
     {      
@@ -25,10 +25,10 @@ public class Ques1 {
         System.out.println("Value of x after: "+x);
         //Objects are passed by reference
         System.out.println("Pass by reference (Objects)");
-        Proof p = new Proof();
-        System.out.println("Value of num before: "+p.num);
-        update(p);
-        System.out.println("Value of num after: "+p.num);
+        Proof proof = new Proof();
+        System.out.println("Value of num before: "+proof.num);
+        update(proof);
+        System.out.println("Value of num after: "+proof.num);
         //Arrays are also passed by reference
         System.out.println("Pass by reference (Array)");
         int[] arr = new int[] {1};
