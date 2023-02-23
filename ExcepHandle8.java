@@ -7,21 +7,22 @@ import java.util.*;
 public class ExcepHandle8 {
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the marks of 10 students");
         int[] marks = new int[10];
         int count=0;
         while(count!=10)
         {
-            try{
+            try
+            {
                 System.out.println("Enter mark of student "+(count+1));
-                int num = sc.nextInt();
+                int num = scanner.nextInt();
                 marks[count++]=num;
             }
-            catch(InputMismatchException ie)
+            catch(InputMismatchException ime)
             {
-                System.out.println(ie);
-                sc.next();
+                System.out.println(ime);
+                scanner.next();
             }        
         }
     }
