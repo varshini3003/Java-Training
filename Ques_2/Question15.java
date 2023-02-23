@@ -72,12 +72,12 @@ public class Question15
         }
         return (sum == n);
     }
-	public static void main(String[] args)
-	{
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Press:\n1. Print prime numbers from 1 to 100\n2. Armstrong number or Palindrome number or Perfect number");
-		int ch = scanner.nextInt();
-		if(ch==1)
+    public static void main(String[] args)
+    {
+	Scanner scanner = new Scanner(System.in);
+	System.out.print("Press:\n1. Print prime numbers from 1 to 100\n2. Armstrong number or Palindrome number or Perfect number");
+	int ch = scanner.nextInt();
+	if(ch==1)
         {
             printprime();
         }
@@ -109,5 +109,5 @@ public class Question15
         {
             System.out.print("Enter a valid choice");
         }
-	}
+    }
 }
