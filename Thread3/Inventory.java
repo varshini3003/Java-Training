@@ -6,37 +6,37 @@ public class Inventory {
     synchronized public void produce()
     {
         Thread t = Thread.currentThread();
-		String name=t.getName();
-		if(flag)
+	String name=t.getName();
+	if(flag)
+	{
+		try
 		{
-			try
-			{
-				wait();
-			}
-			catch(Exception e) {}
+		    wait();
 		}
-		System.out.println("Producing by "+name);
+		catch(Exception e) {}
+	}
+	System.out.println("Producing by "+name);
         countOfproducts++;
         System.out.println("Number of products in the inventory: "+countOfproducts);
-		flag=true;
-		notify();
+	flag=true;
+	notify();
     }
     synchronized public void consume()
     {
         Thread t = Thread.currentThread();
-		String name=t.getName();
-		if(!flag)
+	String name=t.getName();
+	if(!flag)
+	{
+		try
 		{
-			try
-			{
-				wait();
-			}
-			catch(Exception e) {}
+			wait();
 		}
-		System.out.println("Consuming by "+name);
+		catch(Exception e) {}
+	}
+	System.out.println("Consuming by "+name);
         countOfproducts--;
         System.out.println("Number of products in the inventory: "+countOfproducts);
-		flag=false;
-		notify();
+	flag=false;
+	notify();
     }
 }
