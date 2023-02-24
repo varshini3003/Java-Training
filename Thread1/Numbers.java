@@ -20,6 +20,5 @@ public class Numbers {
         {
             System.out.print(num+" ");
         }
-	try {Thread.sleep(1000);}catch(Exception e) {}
     }
 }
