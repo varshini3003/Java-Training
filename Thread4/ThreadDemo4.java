@@ -15,10 +15,11 @@ public class ThreadDemo4 {
     }
     public static void main(String[] args) {
         new ThreadDemo4();
-        for(int i=0; i<120; i++)
+        for(int i=0; i<60; i++)
         {
             LocalDateTime time=LocalDateTime.now();
-            System.out.println(time);
+            String currTime = time.toString();
+            System.out.println(currTime.substring(11,19));
             try
             {
                 Thread.sleep(1000);
