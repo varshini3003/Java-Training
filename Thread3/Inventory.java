@@ -29,7 +29,7 @@ public class Inventory {
 	{
 		try
 		{
-			wait();
+		    wait();
 		}
 		catch(Exception e) {}
 	}
