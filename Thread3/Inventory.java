@@ -3,7 +3,7 @@ package Thread3;
 public class Inventory {
     boolean flag = false;
     int countOfproducts=0;
-    synchronized public void produce()
+    synchronized public void produce() 
     {
 		Thread t = Thread.currentThread();
 		String name = t.getName();
@@ -20,6 +20,11 @@ public class Inventory {
 		System.out.println("Number of products in the inventory: "+countOfproducts);
 		flag=true;
 		notify();
+		try
+		{
+			Thread.sleep(2000);
+		}
+		catch(Exception e) {}
     }
     synchronized public void consume()
     {
@@ -38,5 +43,10 @@ public class Inventory {
 		System.out.println("Number of products in the inventory: "+countOfproducts);
 		flag = false;
 		notify();
+		try
+		{
+			Thread.sleep(2000);
+		}
+		catch(Exception e) {}
     }
 }
