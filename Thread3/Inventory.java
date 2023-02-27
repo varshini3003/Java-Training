@@ -13,7 +13,7 @@ public class Inventory {
 			{
 				wait();
 			}
-			catch(Exception e) {}
+			catch(InterruptedException e) {}
 		}
 		System.out.println("Producing by "+name);
 		countOfproducts++;
@@ -24,7 +24,7 @@ public class Inventory {
 		{
 			Thread.sleep(2000);
 		}
-		catch(Exception e) {}
+		catch(InterruptedException e) {}
     }
     synchronized public void consume()
     {
@@ -32,11 +32,10 @@ public class Inventory {
 		String name = t.getName();
 		if(!flag)
 		{
-			try
-			{
+			try{
 				wait();
 			}
-			catch(Exception e) {}
+			catch(InterruptedException e) {}
 		}
 		System.out.println("Consuming by "+name);
 		countOfproducts--;
@@ -47,6 +46,6 @@ public class Inventory {
 		{
 			Thread.sleep(2000);
 		}
-		catch(Exception e) {}
+		catch(InterruptedException e) {}
     }
 }
