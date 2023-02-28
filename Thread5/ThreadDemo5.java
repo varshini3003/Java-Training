@@ -6,6 +6,7 @@ package Thread5;
  */
 
 public class ThreadDemo5 extends Thread {
+    @Override
     public void run()
     {
         System.out.println("Thread started...");
