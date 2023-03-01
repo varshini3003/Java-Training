@@ -2,7 +2,8 @@ package Builder;
 
 public class BuilderDemo {
     public static void main(String[] args) {
-        Task task = new TaskBuilder(5).setDescription("My task").setSummary("Test").build();
-        System.out.println(task);
+        Computer computer = new Computer.ComputerBuilder("500 GB", "2 GB").setBluetoothEnabled(true)
+            .setGraphicsCardEnabled(true).build();
+        System.out.println(computer);
     }
 }
