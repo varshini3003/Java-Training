@@ -7,6 +7,10 @@ public class PC extends Computer {
         this.cpu=cpu;
         this.ram=ram;
     }
+    
+    /** 
+     * @return String Returns the RAM of PC
+     */
     public String getRAM()
     {
         return this.ram;

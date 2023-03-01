@@ -7,6 +7,10 @@ public class Server extends Computer{
         this.cpu=cpu;
         this.ram=ram;
     }
+    
+    /** 
+     * @return String Returns the RAM of Server
+     */
     public String getRAM()
     {
         return this.ram;
