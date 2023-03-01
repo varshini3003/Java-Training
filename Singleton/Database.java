@@ -5,7 +5,10 @@ class Database {
     private Database() 
     {      
         
-    }
+    }   
+    /** 
+     * @return Database Creates a new database object and returns it else returns the existing database object 
+     */
     public static Database getInstance() 
     {
        if(dbObject == null) 
