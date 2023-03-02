@@ -1,7 +1,7 @@
 package Factory;
 
 public class ComputerFactory {
-    public static Computer getComputer(String type, String ram, String cpu)
+    public static Computer getComputer(String type, String ram, String cpu) 
     {
         if(type.equalsIgnoreCase("PC"))
         {
@@ -11,6 +11,6 @@ public class ComputerFactory {
         {
             return new Server(ram, cpu);
         }
-        return null;
+        throw new NullPointerException("Your preferred type is not available...");
     }
 }
