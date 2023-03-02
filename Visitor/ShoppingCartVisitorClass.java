@@ -2,11 +2,6 @@ package Visitor;
 
 class ShoppingCartVisitorImpl implements ShoppingCartVisitor
 {  
-    /** 
-     * @param book Represents a new book object
-     * @return int Returns the cost of the current book
-     */
-    @Override
     public int visit(Book book)
     {
         int cost=0;
@@ -20,7 +15,6 @@ class ShoppingCartVisitorImpl implements ShoppingCartVisitor
         System.out.println("Book ISBN::"+book.getIsbnNumber() + " cost ="+cost);
         return cost;
     }   
-    @Override
     public int visit(Fruit fruit) 
     {
         int cost = fruit.getPricePerKg()*fruit.getWeight();
