@@ -20,5 +20,5 @@ public class TextEditor
 
     public void hitUndo() {
         textWindow.restore(savedTextWindow);
-}
+    }
 }
