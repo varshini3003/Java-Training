@@ -5,7 +5,7 @@ public class Pentagon extends Shape{
 		super(c);
 	}
 	@Override
-	public void applyColor() {
+	public void fillShapeWithColor() {
 		System.out.print("Pentagon filled with color ");
 		color.applyColor();
 	} 

@@ -6,5 +6,5 @@ public abstract class Shape {
     {
 		this.color=color;
 	}
-	abstract public void applyColor();
+	abstract public void fillShapeWithColor();
 }

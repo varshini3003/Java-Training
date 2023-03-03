@@ -3,8 +3,8 @@ package Bridge;
 public class BridgeDemo {
     public static void main(String[] args) {
 		Shape tri = new Triangle(new RedColor());
-		tri.applyColor();	
+		tri.fillShapeWithColor();	
 		Shape pent = new Pentagon(new GreenColor());
-		pent.applyColor();
+		pent.fillShapeWithColor();
 	}
 }

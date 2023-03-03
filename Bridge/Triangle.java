@@ -4,7 +4,7 @@ public class Triangle extends Shape{
 		super(c);
 	}
 	@Override
-	public void applyColor() {
+	public void fillShapeWithColor() {
 		System.out.print("Triangle filled with color ");
 		color.applyColor();
 	} 

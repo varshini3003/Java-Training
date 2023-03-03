@@ -2,11 +2,10 @@ package Momento;
 public class TextEditor 
 {
     private TextWindow textWindow;
-
+    private TextWindowState textWindowState;
     public TextEditor(TextWindow textWindow) {
         this.textWindow = textWindow;
     }
-    private TextWindowState savedTextWindow;
     public void write(String text) {
         textWindow.addText(text);
     }
@@ -15,10 +14,10 @@ public class TextEditor
         return textWindow.getCurrentText();
     }
     public void hitSave() {
-        savedTextWindow = textWindow.save();
+        textWindowState = textWindow.save();
     }
 
     public void hitUndo() {
-        textWindow.restore(savedTextWindow);
+        textWindow.restore(textWindowState);
     }
 }

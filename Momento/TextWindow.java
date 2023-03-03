@@ -18,7 +18,7 @@ public class TextWindow
       return new TextWindowState(currentText.toString());
   }
 
-  public void restore(TextWindowState save) {
-      currentText = new StringBuilder(save.getText());
+  public void restore(TextWindowState curState) {
+      currentText = new StringBuilder(curState.getText());
   }
 }
