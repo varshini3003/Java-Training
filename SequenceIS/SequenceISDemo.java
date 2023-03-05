@@ -7,7 +7,7 @@ public class SequenceISDemo {
         StringBufferInputStream stringBufferInputStream = new StringBufferInputStream("Information");
         SequenceInputStream sequenceInputStream = new SequenceInputStream(byteArrayInputStream, stringBufferInputStream);
         int ch;
-        while((ch=sequenceInputStream())!=-1)
+        while((ch=sequenceInputStream.read())!=-1)
         {
             System.out.print((char)ch);
         }
