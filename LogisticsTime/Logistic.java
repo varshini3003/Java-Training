@@ -2,12 +2,6 @@ package LogisticsTime;
 import java.time.*;
 import java.util.*;
 public class Logistic {
-	public static LocalTime to_hrs_mins(float time) {
-		int hrs = (int)time;
-		int mins = (int)(60*(time-hrs));
-		String time_str = Integer.toString(hrs) + ":" + Integer.toString(mins);
-		return LocalTime.parse(time_str);
-	}
 	public static int to_mins(float time) {
 		int hrs = (int)time;
 		int mins = (int)(60*(time-hrs));
