@@ -1,60 +1,89 @@
 package LogisticsTime;
-
-import java.util.*;
 import java.time.*;
+import java.util.*;
 public class Logistic {
-    public static boolean isSunday(LocalDate localDate)
-    {
-        String dayOfWeek = localDate.getDayOfWeek().toString();
-        if("SUNDAY".equalsIgnoreCase(dayOfWeek))
-        {
-            return true;
-        }
-        return false;
-    }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the distance in kms");
-		int distance=scanner.nextInt();
-		System.out.println("Enter the speed of your car in km/hr");
-		int speed=scanner.nextInt();
-		int hour = LocalDateTime.now().getHour();  
-		int minute = LocalDateTime.now().getMinute(); 
-		System.out.println(hour+":"+minute);
-	    LocalDate newDate = null;
-	    LocalDate localDate = LocalDate.now();
-        Month currMonth = localDate.getMonth();
-        String month = currMonth.toString();
-		int dayOfMonth = LocalDate.now().getDayOfMonth();
-		DayOfWeek day = localDate.getDayOfWeek();
-		int dayOfYear = LocalDate.now().getDayOfYear();
-        int year = LocalDate.now().getYear();
-		System.out.println(localDate+ " "+dayOfMonth+" "+day+" "+dayOfYear+" "+year+" "+month);
-        double timeTaken = distance/speed;
-        System.out.println("Time taken in hrs: "+ timeTaken);
-        int distanceCoveredPerDay = speed*8;
-        System.out.println(distanceCoveredPerDay);
-        int distanceCovered=distanceCoveredPerDay;
-        int actualTimeTaken=0;
-        while(true)
-        {
-            if(distanceCovered==distance)
-            {
-                
-                break;
-            }
-            if(month.equals("JANUARY") && dayOfMonth==1 || dayOfMonth==26)
-            {
-                
-            }
-            else if(month.equals("AUGUST") && dayOfMonth==15)
-            {
-                
-            }  
-            distanceCoveredPerDay++;
-            actualTimeTaken+=8;
-        }
-        System.out.println(distanceCovered);
-
-    }
+	public static LocalTime to_hrs_mins(float time) {
+		int hrs = (int)time;
+		int mins = (int)(60*(time-hrs));
+		String time_str = Integer.toString(hrs) + ":" + Integer.toString(mins);
+		return LocalTime.parse(time_str);
+	}
+	public static int to_mins(float time) {
+		int hrs = (int)time;
+		int mins = (int)(60*(time-hrs));
+		int total_mins = mins+(hrs*60);
+		return total_mins;
+	}	
+	public static int no_of_sundays_in_btw(LocalDate start, LocalDate end)
+	{
+		int count=0;
+		for(LocalDate date = start; date.isBefore(end); date=date.plusDays(1))
+		{
+			if(date.getDayOfWeek().toString().equals("SUNDAY"))
+			{
+				count++;
+			}		
+		}
+		return count;
+	}
+	public static int no_of_holidays_in_btw(LocalDate start, LocalDate end)
+	{
+		int count=0;
+		for(LocalDate date = start; date.isBefore(end); date=date.plusDays(1))
+		{
+			if(date.getDayOfMonth()==1 && date.getMonthValue()==1)
+			{
+				count++;
+			}
+			if(date.getDayOfMonth()==26 && date.getMonthValue()==1)
+			{
+				count++;
+			}
+			if(date.getDayOfMonth()==15 && date.getMonthValue()==8)
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	public static int no_of_second_saturdays_in_btw(LocalDate start, LocalDate end)
+	{
+		int count=0;
+		for(LocalDate date = start; date.isBefore(end); date=date.plusDays(1))
+		{
+			if(date.getDayOfMonth()>=8 && date.getDayOfMonth()<=14)
+			{
+				if(date.getDayOfWeek().toString().equals("SATURDAY"))
+				{
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		LocalDateTime current_datetime = LocalDateTime.now();
+		LocalDate current_date = LocalDate.now();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter speed of the car");
+		int speed = scanner.nextInt();
+		System.out.println("Enter the distance to be travelled");
+		int distance = scanner.nextInt();
+		float travel_time = (float)distance/(float)speed;
+		int travel_time_mins = to_mins(travel_time);
+		int travel_time_days = travel_time_mins/(24*60);
+		LocalDateTime endDateTime = current_datetime.plusMinutes(travel_time_mins);
+		LocalDate dest_date = current_date.plusDays(travel_time_days);
+		int no_of_sundays = no_of_sundays_in_btw(current_date, dest_date);
+		//System.out.println(no_of_sundays);
+		LocalDateTime actual_end_time = endDateTime.plusDays(no_of_sundays);
+		int no_of_holidays = no_of_holidays_in_btw(current_date, dest_date);
+		//System.out.println(no_of_holidays);
+		actual_end_time = actual_end_time.plusDays(no_of_holidays);
+		int no_of_second_saturdays = no_of_second_saturdays_in_btw(current_date, dest_date);
+		//System.out.println(no_of_second_saturdays);
+		actual_end_time = actual_end_time.plusDays(no_of_second_saturdays);
+		System.out.println(actual_end_time);
+	}
 }
+
